@@ -52,7 +52,7 @@ public class HybridTest {
     public void testGetFuelLevelReturnsCorrectValue() {
         assertEquals(30, hybrid.getFuelLevel());
         hybrid.refuel();
-        assertEquals(100, hybrid.getFuelLevel()); // FIXED: was 101, now 100
+        assertEquals(100, hybrid.getFuelLevel()); 
     }
 
     @Test
@@ -66,7 +66,6 @@ public class HybridTest {
     public void testCalcMPGe() {
         hybrid.setElectricMiles(300);
         hybrid.setTotalKWH(70);
-        // 300/70 * 33.7 = 144.43 (from lab example)
         assertEquals(144.43, hybrid.calcMPGe(), 0.1);
     }
 
