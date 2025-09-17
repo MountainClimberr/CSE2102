@@ -1,3 +1,5 @@
+# Open the Lab01 folder 
+cd Lab01
 # Commands to compile the code java files and the main file
 javac c/*.java
 java c.carRunner
