@@ -2,5 +2,7 @@
     "java.project.referencedLibraries": [
         "Lab01/junit-4.13.2.jar",
         "Lab01/hamcrest-core-1.3.jar"
-    ]
+    ],
+    "python-envs.defaultEnvManager": "ms-python.python:system",
+    "python-envs.pythonProjects": []
 }
