@@ -1,0 +1,87 @@
+/* HTML Caude.ai generated */
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Quiz Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            text-align: center;
+            background-color: #f0f0f0;
+        }
+        .container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .result-box {
+            border: 3px solid #27ae60;
+            padding: 30px;
+            margin: 30px 0;
+            border-radius: 10px;
+            background-color: #d5f4e6;
+        }
+        .score {
+            font-size: 60px;
+            color: #27ae60;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        .percentage {
+            font-size: 24px;
+            color: #2c3e50;
+            margin: 15px 0;
+        }
+        .button {
+            background-color: #3498db;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 10px;
+            border-radius: 5px;
+        }
+        .button:hover {
+            background-color: #2980b9;
+        }
+        .message {
+            font-size: 18px;
+            color: #34495e;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎉 Quiz Complete!</h1>
+        <h2>Congratulations, <span th:text="${greeting.name}"></span>!</h2>
+        
+        <div class="result-box">
+            <p>Your Final Score:</p>
+            <div class="score">
+                <span th:text="${score.correct}"></span> / <span th:text="${score.total}"></span>
+            </div>
+            <div class="percentage">
+                <span th:text="${#numbers.formatDecimal(score.percentage, 1, 2)}"></span>%
+            </div>
+            
+            <div class="message" th:if="${score.percentage >= 80}">
+                Excellent work! You really know your space facts! 🌟
+            </div>
+            <div class="message" th:if="${score.percentage >= 60 and score.percentage < 80}">
+                Good job! You have solid knowledge about space! 👍
+            </div>
+            <div class="message" th:if="${score.percentage < 60}">
+                Keep learning! Space is fascinating! 🚀
+            </div>
+        </div>
+        
+        <a href="/greeting" class="button">Take Quiz Again</a>
+        <a href="/" class="button">Return Home</a>
+    </div>
+</body>
+</html>
